@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class CustomnTopCard extends StatelessWidget {
   final String? title;
@@ -63,9 +64,17 @@ class CustomnTopCard extends StatelessWidget {
                     style: ButtonStyle(
                       backgroundColor: WidgetStateProperty.all(Colors.white),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Fluttertoast.showToast(
+                        backgroundColor: Colors.white,
+                        textColor: Colors.greenAccent,
+                        msg: "Buying Successfully...",
+                        toastLength: Toast.LENGTH_LONG,
+                        gravity: ToastGravity.TOP,
+                      );
+                    },
                     child: Text(
-                      "Shop Now",
+                      "Buy Now",
                       style: TextStyle(color: buttonTextColor ?? Colors.white),
                     ),
                   ),
